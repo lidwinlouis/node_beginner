@@ -1,0 +1,31 @@
+23-10-2023 12:09:17 653e88da-bb20-41e6-a4e2-c9c21ffdebbb : Error Not allowed by CORS
+23-10-2023 12:09:17 5aefdfed-438b-49b3-85ee-e7bde70da8d0 : Error Not allowed by CORS
+23-10-2023 12:09:48 4b52f31b-af49-4938-a9c4-bcc83dff0225 : Error Not allowed by CORS
+23-10-2023 12:09:48 6588e83a-5521-422c-aa2d-523bbc8af797 : Error Not allowed by CORS
+23-10-2023 12:10:32 e2d1f2c7-6a0a-4b4b-bb25-ed77d9718e13 : Error Not allowed by CORS
+23-10-2023 12:11:50 379a0d57-e0a6-4777-9623-99cb176a6054 : Error Not allowed by CORS
+23-10-2023 14:12:02 9b955827-ebeb-4f7c-a6eb-b99c2eb502e3 : TypeError data.employees.get is not a function
+23-10-2023 14:13:48 265a2566-34c1-4e5c-9629-bacd1b84a9f8 : TypeError undefined is not a function
+23-10-2023 14:14:16 01c78236-4bf5-4bd1-bccf-7e4dfef9f711 : TypeError undefined is not a function
+23-10-2023 14:15:49 2d2f34f9-02a2-4596-a3fc-68878505cc3a : TypeError Cannot read properties of undefined (reading 'firstname')
+23-10-2023 14:19:57 c8cbb01a-07be-4b87-b9a4-5ffd9a4f62fe : TypeError Cannot read properties of undefined (reading 'firstname')
+23-10-2023 15:36:06 31cad063-e4b2-46c2-bca9-e403d8b2ff43 : ReferenceError setEmployees is not defined
+23-10-2023 15:36:56 764d9067-272b-44b6-b7f2-25b2c56744fc : ReferenceError setEmployees is not defined
+24-10-2023 09:25:50 4706eca3-6f2e-4155-8ebc-bae9e1dc160f : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 09:31:34 62d4739f-8078-4331-92bd-a5c31759b8a9 : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 10:29:18 cfa92a5d-5101-47d8-844c-f5098ff1bec4 : TypeError Cannot read properties of undefined (reading 'jwt')
+24-10-2023 10:30:10 77c87e63-777b-4298-b156-89366c6de88c : TypeError Cannot read properties of undefined (reading 'jwt')
+24-10-2023 10:30:35 91f17881-93fc-489c-b0fc-71ae32663f2b : TypeError Cannot read properties of undefined (reading 'jwt')
+24-10-2023 10:30:48 7cf205cc-f3d3-4bce-9fa5-43935b760548 : TypeError Cannot read properties of undefined (reading 'jwt')
+24-10-2023 10:31:38 84592be7-bb60-458b-9b12-c17b4d11af7f : TypeError Cannot read properties of undefined (reading 'jwt')
+24-10-2023 10:41:33 09bc15b2-1215-4550-9ee9-335272360b10 : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 10:58:53 7bffce3e-639f-4abc-a1fb-7d43daa57cb1 : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 11:00:17 6e59e44d-f218-4b70-9222-9e0e5fb09161 : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 11:19:11 f592fb45-67a1-45d1-965f-a1e782aadfb7 : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 11:19:34 1ba54979-e45c-4542-8e68-a8d6f3fd5387 : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 11:20:39 434d9b40-06c4-4b4a-bede-8106c8d8438c : TypeError Cannot read properties of undefined (reading 'split')
+24-10-2023 11:24:11 99ffa921-9a94-456a-bfae-99ac0f87bec4 : ReferenceError username is not defined
+24-10-2023 11:24:26 8744032e-497a-49bd-a7ac-ac4c26d39fd3 : ReferenceError username is not defined
+24-10-2023 11:24:36 d2320a9f-3fa3-4ebe-a055-df4cd9435f86 : ReferenceError username is not defined
+24-10-2023 11:24:56 74139c4f-68b5-4490-8dfb-e4c7b8569c43 : ReferenceError username is not defined
+24-10-2023 12:16:50 39332853-925f-4857-a36e-88228262ac20 : TypeError Cannot read properties of undefined (reading 'split')

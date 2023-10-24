@@ -1,0 +1,98 @@
+const path = require('path');
+const cors = require('cors');
+const express = require('express');
+const app = express();
+const { logger } = require('./middleware/logEvents');
+const logErrors = require('./middleware/errorHandler');
+
+const PORT = process.env.PORT || 3500;
+
+//Custom middlewares
+app.use(logger);
+
+//CORS - with options. 
+//The localhost and live servers(with port 5500) and google can be removed in the final prod code. 
+const whitelist = ['https://www.mysite.com/', 'http://127.0.0.1:5500', 'https://localhost:3500', 'https://www.google.com'];
+const corsOptions = {
+    origin: (origin, callback) => {
+        //console.log(origin);
+        if (whitelist.indexOf(origin) !== -1 || !origin) {
+            //console.log("This origin is allowed!");
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    }
+};
+app.use(cors(corsOptions));
+
+//Built in middlewares - https://expressjs.com/en/4x/api.html#express.urlencoded
+//Built-in middleware function that parses incoming requests with urlencoded payloads
+app.use(express.urlencoded({ extended: false }));
+
+//Built-in middleware for static contents
+app.use(express.static(path.join(__dirname, 'public')));
+
+//Built-in middleware for json
+app.use(express.json());
+
+app.get('^/$|/index(.html)?', (req, res) => {
+    console.log('Index.html attemtepd');
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+app.get('/new-page(.html)?', (req, res) => {
+    console.log('new-page.html attemtepd');
+    res.sendFile(path.join(__dirname, 'views', 'new-page.html'));
+});
+app.get('^/old-page(.html)?', (req, res) => {
+    console.log('old-page getting redirected to new-page.html');
+    res.redirect(301, '/new-page.html'); //302 by default
+});
+
+//route handlers 
+app.get('/hello(.html)?', (req, res, next) => {
+    console.log('hello.html requested');
+    next();
+}, (req, res) => {
+    res.send("Hello everyone... Welcome to route handlers");
+});
+
+
+//Route handlers chaining 
+const fnOne = (req, res, next) => {
+    console.log("Calling function one ");
+    next();
+}
+const fnTwo = (req, res, next) => {
+    console.log("Calling function two ");
+    next();
+}
+const fnThree = (req, res) => {
+    console.log("Calling function three ");
+    res.send("Chaining call ends here..");
+}
+// Define some funcions as above and use them in the chaining as below
+app.get('/chain(.html)?', [fnOne, fnTwo, fnThree]);
+
+/* app.get('^/*', (req, res) => {
+    console.log('route does not exist - 404 redirected');
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+}); */
+
+//Using app.all() instead of app.get() for 404 - accepts all methods and allows regex
+app.all('*', (req, res)=>{
+    console.log('route does not exist - 404 redirected');
+    res.status(404);
+    if(req.accepts('html')){
+        res.sendFile(path.join(__dirname, 'views', '404.html'));
+    }else if(req.accepts('json')){
+        res.json({error : '404 not found' });
+    }else{
+        res.type('txt').send('404 not found');
+    }
+   
+});
+
+app.use(logErrors);
+
+app.listen(PORT, () => { console.log(`Server is running on port ${PORT}`) });
